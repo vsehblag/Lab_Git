@@ -13,4 +13,4 @@ jobs:
     
     - name: Build
       run: |
-        msbuild Step.sln /p:Configuration=Release
+        msbuild Step.sln /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143 /p:WindowsTargetPlatformVersion=10.0 /p:CppStandard=stdcpp17
