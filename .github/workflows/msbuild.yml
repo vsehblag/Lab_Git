@@ -1,25 +1,21 @@
-ame: MSBuild
+name: Build_final
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ master ]
 
 jobs:
   build:
-    runs-on: self-hosted  # Ваш локальный Windows runner
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: Build
-      shell: cmd  # Явно указываем использовать командную строку вместо PowerShell
-      run: |
-        msbuild Step.sln ^
-        /p:Configuration=Release ^
-        /p:Platform=x64 ^
-        /p:PlatformToolset=v143 ^
-        /p:WindowsTargetPlatformVersion=10.0 ^
-        /p:CppStandard=stdcpp17 ^
-        /p:AdditionalOptions="/std:c++17"
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.3.1
+
+    - name: Build Solution (.sln)
+      run: msbuild Step.sln /p:Configuration=Debug /p:Platform=x64
