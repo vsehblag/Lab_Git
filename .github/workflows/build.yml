@@ -1,0 +1,16 @@
+name: C++ Build
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build
+      run: |
+        msbuild Step.sln /p:Configuration=Release
