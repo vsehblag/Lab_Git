@@ -1,4 +1,4 @@
-name: MSBuild
+ame: MSBuild
 
 on:
   push:
@@ -8,12 +8,13 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # Используем ваш локальный раннер
+    runs-on: self-hosted  # Ваш локальный Windows runner
 
     steps:
     - uses: actions/checkout@v4
 
     - name: Build
+      shell: cmd  # Явно указываем использовать командную строку вместо PowerShell
       run: |
         msbuild Step.sln ^
         /p:Configuration=Release ^
