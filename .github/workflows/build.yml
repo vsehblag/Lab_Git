@@ -1,4 +1,4 @@
-ame: MSBuild
+name: MSBuild
 
 on:
   push:
