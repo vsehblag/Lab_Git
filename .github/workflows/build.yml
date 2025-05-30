@@ -19,3 +19,4 @@ jobs:
 
     - name: Build Solution (.sln)
       run: msbuild Step.sln /p:Configuration=Debug /p:Platform=x64
+# наконец-то!
