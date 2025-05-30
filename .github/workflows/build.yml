@@ -1,16 +1,24 @@
-name: C++ Build
+name: MSBuild
 
 on:
   push:
-    branches: [ master ]
-  workflow_dispatch:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: self-hosted  # Используем ваш локальный раннер
+
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Build with MSBuild
+
+    - name: Build
       run: |
-        msbuild Step.sln /p:Configuration=Release /p:Platform=x64 /p:AdditionalOptions="/std:c++17"
+        msbuild Step.sln ^
+        /p:Configuration=Release ^
+        /p:Platform=x64 ^
+        /p:PlatformToolset=v143 ^
+        /p:WindowsTargetPlatformVersion=10.0 ^
+        /p:CppStandard=stdcpp17 ^
+        /p:AdditionalOptions="/std:c++17"
