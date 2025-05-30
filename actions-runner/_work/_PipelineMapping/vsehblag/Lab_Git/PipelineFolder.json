@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "vsehblag/Lab_Git",
+  "pipelineDirectory": "Lab_Git",
+  "workspaceDirectory": "Lab_Git\\Lab_Git",
+  "repositories": {
+    "vsehblag/Lab_Git": {
+      "repositoryPath": "Lab_Git\\Lab_Git",
+      "lastRunOn": "05/30/2025 16:21:44 +07:00"
+    }
+  },
+  "lastRunOn": "05/30/2025 17:30:18 +07:00"
+}

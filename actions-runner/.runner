@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 2,
+  "agentName": "test_runner",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus26.actions.githubusercontent.com/yZ2QLMYrmaZwkS9xOFhfJMdia4NZRoVv7IYBWS1kvGW6DDAU86/",
+  "gitHubUrl": "https://github.com/vsehblag/Lab_Git",
+  "workFolder": "_work"
+}
