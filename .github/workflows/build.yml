@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Build
+    - name: Build with MSBuild
       run: |
-        msbuild Step.sln /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143 /p:WindowsTargetPlatformVersion=10.0 /p:CppStandard=stdcpp17
+        msbuild Step.sln /p:Configuration=Release /p:Platform=x64 /p:AdditionalOptions="/std:c++17"
